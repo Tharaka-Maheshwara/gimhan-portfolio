@@ -1400,3 +1400,412 @@ button {
     animation: none;
   }
 }
+
+@property --ring-progress {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+.cad-skills {
+  padding: clamp(64px, 8vw, 100px) 0;
+}
+
+.cad-skills__inner {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(230px, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: clamp(40px, 7vw, 100px);
+}
+
+.cad-skills__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 22px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.cad-skills__eyebrow span {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  border-radius: 50%;
+  background: #e8b91f;
+}
+
+.cad-skills__intro h2 {
+  margin: 0;
+  font-size: clamp(46px, 6vw, 72px);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+}
+
+.cad-skills__intro h2 span {
+  color: #82946f;
+}
+
+.cad-skills__description {
+  max-width: 390px;
+  margin: 24px 0 0;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.cad-skills__notice {
+  display: inline-block;
+  margin: 24px 0 0;
+  padding: 9px 11px;
+  border: 1px solid currentColor;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+}
+
+.cad-skills__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 24px;
+}
+
+.cad-skill {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 15px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 550ms ease var(--skill-delay),
+    transform 550ms ease var(--skill-delay);
+}
+
+.cad-skills.is-visible .cad-skill {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cad-skill__circle {
+  position: relative;
+  display: grid;
+  width: 78px;
+  height: 78px;
+  flex: 0 0 78px;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.cad-skill__circle::before {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  --ring-progress: 0%;
+  background: conic-gradient(
+    from -90deg,
+    #e8b91f 0 var(--ring-progress),
+    #d9dcdd var(--ring-progress) 100%
+  );
+  content: "";
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 8px),
+    #000 calc(100% - 7px)
+  );
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 8px),
+    #000 calc(100% - 7px)
+  );
+}
+
+.cad-skills.is-visible .cad-skill__circle::before {
+  animation: cad-ring-fill 900ms ease-out var(--skill-delay) forwards;
+}
+
+.cad-skill__circle > span {
+  position: relative;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.cad-skill__circle small {
+  font-size: 11px;
+}
+
+.cad-skill__content {
+  min-width: 0;
+}
+
+.cad-skill__index {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.cad-skill__content h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.cad-skill__content p {
+  margin: 5px 0 0;
+  font-size: 9px;
+  line-height: 1.5;
+  letter-spacing: 0.07em;
+}
+
+@keyframes cad-ring-fill {
+  from {
+    --ring-progress: 0%;
+  }
+
+  to {
+    --ring-progress: var(--skill-level);
+  }
+}
+
+@media (max-width: 760px) {
+  .cad-skills__inner {
+    width: calc(100% - 36px);
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .cad-skills__description {
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 520px) {
+  .cad-skills__list {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .cad-skill__circle {
+    width: 72px;
+    height: 72px;
+    flex-basis: 72px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cad-skill {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .cad-skills.is-visible .cad-skill__circle::before {
+    animation: none;
+    --ring-progress: var(--skill-level);
+  }
+}
+.cad-skills__list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px 48px;
+}
+
+.cad-skill {
+  gap: 20px;
+}
+
+.cad-skill__circle {
+  width: 108px;
+  height: 108px;
+  flex-basis: 108px;
+}
+
+.cad-skill__circle::before {
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 10px),
+    #000 calc(100% - 9px)
+  );
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 10px),
+    #000 calc(100% - 9px)
+  );
+}
+
+.cad-skill__circle > span {
+  font-size: 22px;
+}
+
+.cad-skill__circle small {
+  font-size: 13px;
+}
+
+.cad-skill__index {
+  font-size: 10px;
+}
+
+.cad-skill__content h3 {
+  font-size: 22px;
+}
+
+.cad-skill__content p {
+  font-size: 10px;
+}
+
+@media (max-width: 520px) {
+  .cad-skills__list {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .cad-skill__circle {
+    width: 90px;
+    height: 90px;
+    flex-basis: 90px;
+  }
+
+  .cad-skill__content h3 {
+    font-size: 20px;
+  }
+}
+/* Larger Skills section elements */
+.cad-skills__list {
+  gap: 48px 56px;
+}
+
+.cad-skill {
+  gap: 28px;
+}
+
+.cad-skill__circle {
+  width: 150px;
+  height: 150px;
+  flex-basis: 150px;
+}
+
+.cad-skill__circle::before {
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 12px),
+    #000 calc(100% - 11px)
+  );
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 12px),
+    #000 calc(100% - 11px)
+  );
+}
+
+.cad-skill__circle > span {
+  font-size: 30px;
+}
+
+.cad-skill__circle small {
+  font-size: 15px;
+}
+
+.cad-skill__index {
+  font-size: 12px;
+}
+
+.cad-skill__content h3 {
+  font-size: 28px;
+}
+
+.cad-skill__content p {
+  font-size: 12px;
+}
+
+/* Mobile sizing */
+@media (max-width: 520px) {
+  .cad-skills__list {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .cad-skill {
+    gap: 22px;
+  }
+
+  .cad-skill__circle {
+    width: 112px;
+    height: 112px;
+    flex-basis: 112px;
+  }
+
+  .cad-skill__circle > span {
+    font-size: 25px;
+  }
+
+  .cad-skill__content h3 {
+    font-size: 23px;
+  }
+}
+
+/* More space between the two skill items */
+.cad-skills__list {
+  column-gap: 100px;
+  row-gap: 56px;
+}
+
+/* Reveal skills one after the other */
+.cad-skill {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.cad-skills.is-visible .cad-skill {
+  animation: skillReveal 700ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  animation-delay: var(--skill-delay, 0ms);
+}
+
+/* Animate the circular indicators */
+.cad-skill__circle {
+  opacity: 0;
+  transform: scale(0.78) rotate(-25deg);
+}
+
+.cad-skills.is-visible .cad-skill__circle {
+  animation: circleReveal 850ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  animation-delay: calc(var(--skill-delay, 0ms) + 120ms);
+}
+
+@keyframes skillReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes circleReveal {
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+/* Keep the layout comfortable on smaller screens */
+@media (max-width: 900px) {
+  .cad-skills__list {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 36px;
+  }
+}
+
+/* Respect the visitor's reduced-motion setting */
+@media (prefers-reduced-motion: reduce) {
+  .cad-skill,
+  .cad-skill__circle,
+  .cad-skills.is-visible .cad-skill,
+  .cad-skills.is-visible .cad-skill__circle {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

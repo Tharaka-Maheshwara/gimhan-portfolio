@@ -44,6 +44,7 @@ export default function Skills() {
 
   return (
     <section
+      id="skills"
       ref={sectionRef}
       className={`cad-skills${isVisible ? " is-visible" : ""}`}
     >
@@ -77,40 +78,30 @@ export default function Skills() {
               key={skill.name}
               style={{ "--skill-delay": `${index * 140}ms` }}
             >
-              <div className="cad-skill__heading">
-                <div>
-                  <span className="cad-skill__index">
-                    {String(index + 1).padStart(2, "0")} /{" "}
-                    {String(skillItems.length).padStart(2, "0")}
-                  </span>
-
-                  <h3>{skill.name}</h3>
-                </div>
-
-                <p className="cad-skill__score" aria-label={`${skill.level}% draft rating`}>
-                  {skill.level}
-                  <span>%</span>
-                </p>
-              </div>
-
               <div
-                className="cad-skill__track"
+                className="cad-skill__circle"
                 role="meter"
                 aria-label={`${skill.name} draft self-rating`}
                 aria-valuemin={0}
                 aria-valuemax={100}
                 aria-valuenow={skill.level}
                 aria-valuetext={`${skill.level}% draft self-rating`}
+                style={{ "--skill-level": `${skill.level}%` }}
               >
-                <span
-                  className="cad-skill__fill"
-                  style={{ "--skill-level": `${skill.level}%` }}
-                />
+                <span aria-hidden="true">
+                  {skill.level}
+                  <small>%</small>
+                </span>
               </div>
 
-              <div className="cad-skill__details">
-                <span>{skill.focus}</span>
-                <span>DRAFT RATING</span>
+              <div className="cad-skill__content">
+                <span className="cad-skill__index">
+                  {String(index + 1).padStart(2, "0")} /{" "}
+                  {String(skillItems.length).padStart(2, "0")}
+                </span>
+
+                <h3>{skill.name}</h3>
+                <p>{skill.focus}</p>
               </div>
             </article>
           ))}
