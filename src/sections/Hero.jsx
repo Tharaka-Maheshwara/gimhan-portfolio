@@ -1,12 +1,61 @@
+import { useEffect, useState } from "react";
+
+const introText = "HELLO, I’M ";
+const nameText = "GIMHAN KAVISHKA";
+const fullGreeting = introText + nameText;
+
 export default function Hero() {
+  const [visibleChars, setVisibleChars] = useState(0);
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (prefersReducedMotion) {
+      setVisibleChars(fullGreeting.length);
+      return;
+    }
+
+    let currentIndex = 0;
+
+    const timer = window.setInterval(() => {
+      currentIndex += 1;
+      setVisibleChars(currentIndex);
+
+      if (currentIndex >= fullGreeting.length) {
+        window.clearInterval(timer);
+      }
+    }, 45);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
+  const visibleIntro = fullGreeting.slice(
+    0,
+    Math.min(visibleChars, introText.length)
+  );
+
+  const visibleName =
+    visibleChars > introText.length
+      ? fullGreeting.slice(introText.length, visibleChars)
+      : "";
+
+  const isTyping = visibleChars < fullGreeting.length;
+
   return (
     <section className="hero">
       <div className="hero-inner">
         <div className="hero-copy">
-         <p className="eyebrow">
-  HELLO, I’M{" "}
-  <span className="eyebrow-name">GIMHAN KAVISHKA</span>
-</p>
+          <p className="eyebrow" aria-label={fullGreeting}>
+            {visibleIntro}
+            {visibleName && (
+              <span className="eyebrow-name">{visibleName}</span>
+            )}
+            {isTyping && (
+              <span className="typing-cursor" aria-hidden="true" />
+            )}
+          </p>
 
           <h1 className="hero-title">
             Mechanical

@@ -1251,3 +1251,61 @@ button {
   font-size: 1.15em;
   font-weight: 800;
 }
+
+.eyebrow {
+  min-height: 1.4em;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 4px;
+  vertical-align: -0.12em;
+  background: currentColor;
+  animation: cursor-blink 0.75s steps(1, end) infinite;
+}
+
+@keyframes cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.hero-copy > :not(.eyebrow) {
+  opacity: 0;
+  animation: hero-content-fade 600ms ease-out forwards;
+}
+
+.hero-copy > :nth-child(2) {
+  animation-delay: 1.2s;
+}
+
+.hero-copy > :nth-child(3) {
+  animation-delay: 1.35s;
+}
+
+.hero-copy > :nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+.hero-copy > :nth-child(5) {
+  animation-delay: 1.65s;
+}
+
+@keyframes hero-content-fade {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typing-cursor {
+    animation: none;
+  }
+
+  .hero-copy > :not(.eyebrow) {
+    opacity: 1;
+    animation: none;
+  }
+}
