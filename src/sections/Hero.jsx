@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 
-const introText = "HELLO, I’M ";
-const nameText = "GIMHAN KAVISHKA";
-const fullGreeting = introText + nameText;
+const displayName = "Gimhan Kavishka";
 
 export default function Hero() {
   const [visibleChars, setVisibleChars] = useState(0);
@@ -13,49 +11,40 @@ export default function Hero() {
     ).matches;
 
     if (prefersReducedMotion) {
-      setVisibleChars(fullGreeting.length);
+      setVisibleChars(displayName.length);
       return;
     }
 
-    let currentIndex = 0;
+    let index = 0;
 
     const timer = window.setInterval(() => {
-      currentIndex += 1;
-      setVisibleChars(currentIndex);
+      index += 1;
+      setVisibleChars(index);
 
-      if (currentIndex >= fullGreeting.length) {
+      if (index >= displayName.length) {
         window.clearInterval(timer);
       }
-    }, 45);
+    }, 55);
 
     return () => window.clearInterval(timer);
   }, []);
 
-  const visibleIntro = fullGreeting.slice(
-    0,
-    Math.min(visibleChars, introText.length)
-  );
-
-  const visibleName =
-    visibleChars > introText.length
-      ? fullGreeting.slice(introText.length, visibleChars)
-      : "";
-
-  const isTyping = visibleChars < fullGreeting.length;
+  const isTyping = visibleChars < displayName.length;
 
   return (
     <section className="hero">
       <div className="hero-inner">
         <div className="hero-copy">
-          <p className="eyebrow" aria-label={fullGreeting}>
-            {visibleIntro}
-            {visibleName && (
-              <span className="eyebrow-name">{visibleName}</span>
-            )}
-            {isTyping && (
-              <span className="typing-cursor" aria-hidden="true" />
-            )}
-          </p>
+          <div className="hero-greeting">
+            <p className="hero-greeting-hello">Hello!</p>
+
+            <p className="hero-greeting-name" aria-label={`I’m ${displayName}`}>
+              I’m <span>{displayName.slice(0, visibleChars)}</span>
+              {isTyping && (
+                <span className="typing-cursor" aria-hidden="true" />
+              )}
+            </p>
+          </div>
 
           <h1 className="hero-title">
             Mechanical
