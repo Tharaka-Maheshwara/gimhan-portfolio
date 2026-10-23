@@ -3,9 +3,10 @@ export default function Hero() {
     <section className="hero">
       <div className="hero-inner">
         <div className="hero-copy">
-          <p className="eyebrow">
-            HELLO, I’M <span className="eyebrow-name">GIMHAN</span>
-          </p>
+         <p className="eyebrow">
+  HELLO, I’M{" "}
+  <span className="eyebrow-name">GIMHAN KAVISHKA</span>
+</p>
 
           <h1 className="hero-title">
             Mechanical
@@ -33,12 +34,9 @@ export default function Hero() {
         <div className="portrait-placeholder hero-portrait">
           <img
             className="portrait-image"
-            src="/assets/gimhan-profile.jpg"
+            src="/assets/gimhan-profile.png"
             alt="Gimhan, Mechanical Designer"
           />
-
-          <span className="portrait-index">01 / PROFILE</span>
-          <span className="portrait-label">MECHANICAL DESIGNER</span>
         </div>
       </div>
     </section>
