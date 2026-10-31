@@ -6,12 +6,12 @@ import industrialDesignCover from "../assets/projects-cover-images/category-indu
 import reverseEngineeringCover from "../assets/projects-cover-images/category-reverse-engineering.png";
 import technicalDrawingsCover from "../assets/projects-cover-images/category-technical-drawings.png";
 
-const coverImages = {
-  "01": sheetMetalCover,
-  "02": industrialDesignCover,
-  "03": reverseEngineeringCover,
-  "04": technicalDrawingsCover,
-};
+const coverImages = [
+  sheetMetalCover,
+  industrialDesignCover,
+  reverseEngineeringCover,
+  technicalDrawingsCover,
+];
 
 export default function Projects() {
   return (
@@ -24,17 +24,13 @@ export default function Projects() {
         </p>
 
         <div className="projects-grid">
-          {projects.map((project) => {
-            const projectNumber = String(project.number).padStart(2, "0");
-
-            return (
-              <ProjectCard
-                key={project.id}
-                project={project}
-                cover={coverImages[projectNumber]}
-              />
-            );
-          })}
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              cover={coverImages[index]}
+            />
+          ))}
         </div>
       </div>
     </section>

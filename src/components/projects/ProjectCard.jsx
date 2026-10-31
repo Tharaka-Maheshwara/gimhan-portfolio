@@ -18,14 +18,9 @@ export default function ProjectCard({ project, cover }) {
         <p className="project-category">
           PROJECT CATEGORY / {project.number}
         </p>
+
         <h3>{project.title}</h3>
         <p className="project-description">{project.description}</p>
-
-        <div className="project-tags">
-          {project.tags.map((tag) => (
-            <span key={tag}>{tag}</span>
-          ))}
-        </div>
       </div>
     </article>
   );
