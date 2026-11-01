@@ -1897,3 +1897,262 @@ button {
   position: absolute;
   z-index: 2;
 }
+
+/* Category card cover image and link icons */
+.project-art {
+  position: relative;
+  aspect-ratio: 2.1 / 1;
+  min-height: 220px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #1b2932;
+}
+
+.project-cover-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.project-card:hover .project-cover-image {
+  transform: scale(1.035);
+}
+
+.project-art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(12, 21, 27, 0.28),
+    transparent 40%,
+    rgba(12, 21, 27, 0.2)
+  );
+}
+
+.project-number {
+  z-index: 2;
+  padding: 7px 9px;
+  color: #f4f5f2;
+  background: rgba(17, 28, 35, 0.68);
+}
+
+.project-card__icon-link {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 3;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  color: #17242b;
+  background: #eef1ed;
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.project-card__icon-link:hover {
+  color: #eef1ed;
+  background: #17242b;
+  transform: translate(2px, -2px);
+}
+
+.project-card__arrow {
+  width: 20px;
+  height: 20px;
+}
+
+.project-card__action {
+  width: fit-content;
+  margin-top: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #52644e;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.project-card__action .project-card__arrow {
+  width: 17px;
+  height: 17px;
+  transition: transform 180ms ease;
+}
+
+.project-card__action:hover .project-card__arrow {
+  transform: translate(3px, -3px);
+}
+
+.project-card__icon-link:focus-visible,
+.project-card__action:focus-visible,
+.project-back-link:focus-visible {
+  outline: 3px solid #82947c;
+  outline-offset: 4px;
+}
+
+/* Separate project category page */
+.project-category-page {
+  min-height: 70vh;
+  padding: 64px 0 88px;
+  color: #17242b;
+  background: #e5eae6;
+}
+
+.project-back-link {
+  display: inline-flex;
+  margin-bottom: 32px;
+  color: #52644e;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.project-category-header {
+  max-width: 850px;
+  margin-bottom: 30px;
+}
+
+.project-category-header h1 {
+  margin: 12px 0;
+  font-size: clamp(38px, 6vw, 68px);
+  line-height: 1.04;
+  letter-spacing: -0.055em;
+}
+
+.project-category-intro {
+  max-width: 680px;
+  color: #68757a;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.project-category-cover {
+  width: 100%;
+  max-height: 430px;
+  aspect-ratio: 2.1 / 1;
+  overflow: hidden;
+  background: #1b2932;
+}
+
+.project-category-cover img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.project-list-heading {
+  margin: 56px 0 22px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.project-list-heading h2 {
+  margin: 10px 0 0;
+  font-size: clamp(28px, 4vw, 42px);
+  letter-spacing: -0.04em;
+}
+
+.project-list-heading > span {
+  color: #68757a;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+
+.project-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.project-detail-card {
+  padding: 26px;
+  border: 1px solid #d0d8d2;
+  background: #f8f9f6;
+}
+
+.project-detail-number {
+  margin: 0 0 22px;
+  color: #718087;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.project-detail-card h3 {
+  margin: 0 0 12px;
+  color: #17242b;
+  font-size: 22px;
+}
+
+.project-detail-card > p:last-child {
+  margin: 0;
+  color: #68757a;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.project-detail-image {
+  width: 100%;
+  margin-bottom: 20px;
+  display: block;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+@media (max-width: 700px) {
+  .project-art {
+    aspect-ratio: 1.65 / 1;
+    min-height: 190px;
+  }
+
+  .project-category-page {
+    padding: 42px 0 60px;
+  }
+
+  .project-category-header h1 {
+    font-size: clamp(36px, 11vw, 52px);
+  }
+
+  .project-category-intro {
+    font-size: 15px;
+  }
+
+  .project-category-cover {
+    aspect-ratio: 1.45 / 1;
+  }
+
+  .project-list-heading {
+    margin-top: 42px;
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .project-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .project-detail-card {
+    padding: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-cover-image,
+  .project-card__icon-link,
+  .project-card__action .project-card__arrow {
+    transition: none;
+  }
+}
