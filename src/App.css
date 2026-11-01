@@ -2797,3 +2797,82 @@ button {
   align-items: center;
   gap: 80px;
 }
+
+/* Global mobile width fix */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+body {
+  display: block;
+  min-height: 100vh;
+}
+
+#root {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+main,
+main > *,
+main > * > * {
+  min-width: 0;
+}
+
+main > section,
+main > div {
+  width: 100%;
+  max-width: 100%;
+}
+
+img,
+video,
+canvas,
+svg,
+iframe {
+  max-width: 100%;
+}
+
+/* Mobile: make every page shell fill the viewport */
+@media (max-width: 700px) {
+  html,
+  body,
+  #root {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+  }
+
+  body,
+  #root {
+    display: block !important;
+  }
+
+  #root {
+    padding: 0 !important;
+    overflow-x: hidden;
+  }
+
+  #root > header,
+  #root > main,
+  #root > footer,
+  #root > main > section,
+  #root > main > div {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
