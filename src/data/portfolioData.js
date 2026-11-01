@@ -103,6 +103,7 @@ function getProjectsInCategory(categoryFolder) {
 const categories = [
   {
     id: "category-1",
+    slug: "3d-modeling-sheet-metal",
     number: "1",
     folder: "01-3d-modeling-sheet-metal",
     title: "3D Modeling & Sheet Metal Design",
@@ -112,6 +113,7 @@ const categories = [
   },
   {
     id: "category-2",
+    slug: "product-industrial-design",
     number: "2",
     folder: "02-product-industrial-design",
     title: "Product & Industrial Design Projects",
@@ -121,6 +123,7 @@ const categories = [
   },
   {
     id: "category-3",
+    slug: "reverse-engineering-prototyping",
     number: "3",
     folder: "03-reverse-engineering-prototyping",
     title: "Reverse Engineering & Prototyping",
@@ -130,6 +133,7 @@ const categories = [
   },
   {
     id: "category-4",
+    slug: "2d-technical-drawings",
     number: "4",
     folder: "04-2d-technical-drawings",
     title: "2D Technical Drawings",

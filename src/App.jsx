@@ -44,7 +44,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route
-          path="/projects/:id"
+          path="/projects/:slug"
           element={<ProjectCategoryPage />}
         />
         <Route path="*" element={<NotFoundPage />} />

@@ -20,7 +20,7 @@ function ArrowIcon() {
 }
 
 export default function ProjectCard({ project }) {
-  const projectUrl = `/projects/${project.id}`;
+  const projectUrl = `/projects/${project.slug}`;
 
   return (
     <article className="project-card">

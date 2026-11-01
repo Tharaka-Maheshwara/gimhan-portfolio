@@ -2,8 +2,10 @@ import { Link, useParams } from "react-router";
 import { projects } from "../data/portfolioData.js";
 
 export default function ProjectCategoryPage() {
-  const { id } = useParams();
-  const category = projects.find((item) => item.id === id);
+  const { slug } = useParams();
+  const category = projects.find(
+    (item) => item.slug === slug || item.id === slug
+  );
 
   if (!category) {
     return (
