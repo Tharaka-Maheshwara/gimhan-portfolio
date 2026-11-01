@@ -2876,3 +2876,68 @@ iframe {
     margin-right: 0 !important;
   }
 }
+@media (max-width: 700px) {
+  html,
+  body,
+  #root {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+  }
+
+  #root > main,
+  #root > main > .contact-section {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  .contact-section .contact-inner {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    align-items: start !important;
+    gap: 24px !important;
+    width: calc(100% - 36px) !important;
+    max-width: 560px !important;
+    min-width: 0 !important;
+    margin-inline: auto !important;
+  }
+
+  .contact-section .contact-copy,
+  .contact-section .contact-links {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .contact-section .contact-copy h2 {
+    width: 100%;
+    max-width: none;
+    font-size: clamp(40px, 10vw, 52px);
+    line-height: 1.02;
+  }
+
+  .contact-section .contact-links {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .contact-section .contact-detail {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    min-height: 58px;
+    padding: 16px;
+  }
+
+  .contact-section .contact-detail span {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    font-size: 9px;
+    line-height: 1.5;
+  }
+}
