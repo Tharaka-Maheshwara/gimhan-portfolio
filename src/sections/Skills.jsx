@@ -66,9 +66,7 @@ export default function Skills() {
             and 2D technical drawings.
           </p>
 
-          <p className="cad-skills__notice">
-            SELF-RATING / DRAFT — CONFIRM BEFORE SHARING
-          </p>
+         
         </div>
 
         <div className="cad-skills__list">
