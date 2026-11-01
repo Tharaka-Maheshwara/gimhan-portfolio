@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const displayName = "Gimhan Kavishka";
+const displayName = "Gimhan";
 
 export default function Hero() {
   const [visibleChars, setVisibleChars] = useState(0);
