@@ -18,10 +18,13 @@ export default function Header() {
     <header className="site-header">
       <div className="header-inner">
         <a className="brand" href="/#top" onClick={closeMenu}>
-          <span className="brand-mark">G</span>
-          <span>
-            GIMHAN
-            <small>MECHANICAL DESIGNER</small>
+          <span className="brand-mark">MD</span>
+
+          <span className="brand-copy">
+            <span className="brand-title">MECHANICAL DESIGN</span>
+            <small className="brand-subtitle">
+              PORTFOLIO <span aria-hidden="true">/</span> 2026
+            </small>
           </span>
         </a>
 
@@ -51,12 +54,13 @@ export default function Header() {
             return (
               <a
                 key={label}
-                className={isContactLink ? "nav-link nav-link--contact" : "nav-link"}
+                className={
+                  isContactLink ? "nav-link nav-link--contact" : "nav-link"
+                }
                 href={href}
                 onClick={closeMenu}
               >
                 <span>{label}</span>
-
                 {isContactLink && (
                   <span className="nav-link__arrow" aria-hidden="true">
                     ↗
