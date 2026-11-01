@@ -2563,3 +2563,126 @@ button {
   opacity: 1 !important;
   visibility: visible !important;
 }
+
+/* Dark theme for project category detail pages */
+.project-category-page {
+  color: #f4f5f2;
+  background: #111c23;
+}
+
+.project-category-page .section-eyebrow {
+  color: #c5d2c9;
+}
+
+.project-category-page .project-back-link {
+  color: #c5d2c9;
+}
+
+.project-category-page .project-category-header h1 {
+  color: #f4f5f2 !important;
+  -webkit-text-fill-color: #f4f5f2 !important;
+}
+
+.project-category-page .project-category-intro {
+  color: #bac4c6;
+}
+
+/* Project description cards */
+.project-category-page .project-detail-card {
+  border-color: rgba(255, 255, 255, 0.14);
+  color: #f4f5f2;
+  background: #17242b;
+}
+
+.project-category-page .project-detail-card h2 {
+  color: #f4f5f2;
+}
+
+.project-category-page .project-detail-number {
+  color: #c5d2c9;
+}
+
+.project-category-page .project-detail-description {
+  color: #bac4c6;
+}
+
+/* Gallery image frames */
+.project-category-page .project-gallery figure {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: #1b2932;
+}
+
+.project-category-page .project-gallery figcaption {
+  color: #bac4c6;
+}
+
+.project-category-page .project-empty-state {
+  border-color: rgba(255, 255, 255, 0.14);
+  color: #bac4c6;
+  background: #17242b;
+}
+
+.project-category-page .project-empty-state h2 {
+  color: #f4f5f2;
+}
+/* Dark theme for project category detail pages */
+.project-category-page {
+  color: #f4f5f2;
+  background: #111c23;
+}
+
+.project-category-page .section-eyebrow {
+  color: #c5d2c9;
+}
+
+.project-category-page .project-back-link {
+  color: #c5d2c9;
+}
+
+.project-category-page .project-category-header h1 {
+  color: #f4f5f2 !important;
+  -webkit-text-fill-color: #f4f5f2 !important;
+}
+
+.project-category-page .project-category-intro {
+  color: #bac4c6;
+}
+
+/* Project description cards */
+.project-category-page .project-detail-card {
+  border-color: rgba(255, 255, 255, 0.14);
+  color: #f4f5f2;
+  background: #17242b;
+}
+
+.project-category-page .project-detail-card h2 {
+  color: #f4f5f2;
+}
+
+.project-category-page .project-detail-number {
+  color: #c5d2c9;
+}
+
+.project-category-page .project-detail-description {
+  color: #bac4c6;
+}
+
+/* Gallery image frames */
+.project-category-page .project-gallery figure {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: #1b2932;
+}
+
+.project-category-page .project-gallery figcaption {
+  color: #bac4c6;
+}
+
+.project-category-page .project-empty-state {
+  border-color: rgba(255, 255, 255, 0.14);
+  color: #bac4c6;
+  background: #17242b;
+}
+
+.project-category-page .project-empty-state h2 {
+  color: #f4f5f2;
+}
