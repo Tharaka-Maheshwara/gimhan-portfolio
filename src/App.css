@@ -2941,3 +2941,42 @@ iframe {
     line-height: 1.5;
   }
 }
+
+/* Desktop Contact button */
+.nav-links a.nav-link--contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-width: 124px;
+  min-height: 47px;
+  padding: 0 19px;
+  border: 1px solid rgba(197, 210, 201, 0.55);
+  color: #d2f36b;
+  background: transparent;
+  font-family: var(--mono, monospace);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: border-color 180ms ease, color 180ms ease;
+}
+
+.nav-links a.nav-link--contact:hover {
+  border-color: #d2f36b;
+  color: #d2f36b;
+}
+
+.nav-link__arrow {
+  color: #d2f36b;
+  font-size: 13px;
+}
+
+/* Contact button inside the mobile dropdown */
+@media (max-width: 700px) {
+  .nav-links a.nav-link--contact {
+    width: 100%;
+    min-height: 44px;
+    margin-top: 9px;
+    padding: 0 12px;
+  }
+}

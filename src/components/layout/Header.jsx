@@ -28,7 +28,9 @@ export default function Header() {
         <button
           className={`menu-toggle${isMenuOpen ? " is-open" : ""}`}
           type="button"
-          aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-label={
+            isMenuOpen ? "Close navigation menu" : "Open navigation menu"
+          }
           aria-expanded={isMenuOpen}
           aria-controls="site-navigation"
           onClick={() => setIsMenuOpen((open) => !open)}
@@ -42,13 +44,27 @@ export default function Header() {
           className={`nav-links${isMenuOpen ? " is-open" : ""}`}
           id="site-navigation"
           aria-label="Main navigation"
-          aria-hidden={!isMenuOpen}
         >
-          {navItems.map(([label, href]) => (
-            <a key={label} href={href} onClick={closeMenu}>
-              {label}
-            </a>
-          ))}
+          {navItems.map(([label, href]) => {
+            const isContactLink = label === "Contact";
+
+            return (
+              <a
+                key={label}
+                className={isContactLink ? "nav-link nav-link--contact" : "nav-link"}
+                href={href}
+                onClick={closeMenu}
+              >
+                <span>{label}</span>
+
+                {isContactLink && (
+                  <span className="nav-link__arrow" aria-hidden="true">
+                    ↗
+                  </span>
+                )}
+              </a>
+            );
+          })}
         </nav>
       </div>
     </header>
