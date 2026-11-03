@@ -7,7 +7,7 @@ import Skills from "./sections/Skills.jsx";
 import Projects from "./sections/Projects.jsx";
 import Contact from "./sections/Contact.jsx";
 import ProjectCategoryPage from "./pages/ProjectCategoryPage.jsx";
-
+import WorkExperience from "./sections/WorkExperience.jsx";
 import "./App.css";
 
 function HomePage() {
@@ -15,6 +15,7 @@ function HomePage() {
     <main>
       <Hero />
       <Skills />
+      <WorkExperience />
       <Projects />
       <Contact />
     </main>
