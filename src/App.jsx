@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router";
-
+import Education from "./sections/Education.jsx";
 import Header from "./components/layout/Header.jsx";
 import Footer from "./components/layout/Footer.jsx";
 import Hero from "./sections/Hero.jsx";
@@ -16,6 +16,7 @@ function HomePage() {
       <Hero />
       <Skills />
       <WorkExperience />
+      <Education />
       <Projects />
       <Contact />
     </main>

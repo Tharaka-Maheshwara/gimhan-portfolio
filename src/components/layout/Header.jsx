@@ -3,6 +3,8 @@ import { useState } from "react";
 const navItems = [
   ["About", "/#about"],
   ["Skills", "/#skills"],
+  ["Work Experience", "/#experience"],
+  ["Education", "/#education"],
   ["Projects", "/#projects"],
   ["Contact", "/#contact"],
 ];
