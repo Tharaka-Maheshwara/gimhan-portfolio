@@ -53,7 +53,7 @@ export default function Hero() {
           </h1>
 
           <p className="hero-description">
-           Mechanical and Manufacturing Technology graduate (BEngTech Hons) with hands-on experience in switchgear sheet-metal design, production engineering, and fabrication operations. Skilled in SolidWorks, AutoCAD, and CNC programming, with experience leading fabrication workflows and reducing manufacturing lead time by 15% through process improvement. Lean Six Sigma Green Belt certified, with a strong focus on continuous improvement, product quality, and efficient manufacturing.
+          Mechanical Designer bridging the gap between digital CAD workflows and physical manufacturing, specializing in SolidWorks, AutoCAD, and sheet metal fabrication.
           </p>
 
           <div className="hero-tags">
