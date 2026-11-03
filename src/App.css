@@ -3177,3 +3177,72 @@ iframe {
     min-height: 76px;
   }
 }
+@media (min-width: 1024px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 1.6fr) minmax(300px, 0.65fr);
+    gap: clamp(36px, 4vw, 64px);
+  }
+
+  .hero-copy {
+    width: 100%;
+    max-width: 800px;
+  }
+
+  .hero-description {
+    width: 100%;
+    max-width: 780px;
+    margin-inline: 0;
+    font-size: 15px;
+    line-height: 1.65;
+    text-align: left;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1023px) {
+  .hero-description {
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-inner {
+    width: min(1400px, calc(100% - 64px));
+  }
+
+  .hero-copy {
+    width: 100%;
+    max-width: 780px;
+  }
+
+  .hero-description {
+    width: 100%;
+    max-width: 760px;
+    margin-inline: 0;
+    font-size: 15px;
+    line-height: 1.65;
+    text-align: left;
+  }
+}
+@media (min-width: 1200px) {
+  .hero-description {
+    width: min(800px, calc(100% + 210px));
+    max-width: 800px;
+    margin-inline: 0;
+    text-align: left;
+  }
+}
+@media (min-width: 701px) {
+  .cad-skills__inner {
+    width: min(1300px, calc(100% - 64px));
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .cad-skills__inner {
+    width: calc(100% - 36px);
+    margin-inline: auto;
+  }
+}
