@@ -75,6 +75,17 @@ const projectDetails = {
   },
 };
 
+function normalizeProjectFolder(folderName) {
+  return folderName.trim().replace(/\s+/g, " ").toLowerCase();
+}
+
+const normalizedProjectDetails = Object.fromEntries(
+  Object.entries(projectDetails).map(([folder, details]) => [
+    normalizeProjectFolder(folder),
+    details,
+  ])
+);
+
 function getProjectTitle(folderName) {
   const title = folderName
     .replace(/^\d+\.\d+-/, "")
@@ -100,7 +111,7 @@ function getImagesForProject(categoryFolder, projectFolder) {
     .sort(([pathA], [pathB]) =>
       pathA.localeCompare(pathB, undefined, { numeric: true })
     )
-    .map(([path, src], index) => ({
+    .map(([, src], index) => ({
       src,
       alt: `${getProjectTitle(projectFolder)} — Figure ${String(
         index + 1
@@ -124,7 +135,7 @@ function getProjectsInCategory(categoryFolder) {
 
   return projectFolders.map((folder) => {
     const subNumber = folder.match(/^\d+\.\d+/)?.[0] ?? "";
-    const details = projectDetails[folder];
+    const details = normalizedProjectDetails[normalizeProjectFolder(folder)];
 
     return {
       folder,
