@@ -38,10 +38,40 @@ const projectDetails = {
     description:
       "Designed a hazardous-environment enclosure with uniform wall thickness and a 1-degree draft angle for casting.",
   },
+  "2.3-Modular Free-Standing Electrical Enclosure Frame": {
+    title: "Modular Free-Standing Electrical Enclosure Frame",
+    description:
+      "Engineered a robust modular frame assembly in SolidWorks featuring perforated profile members and structural corner joints. Developed complete 2D manufacturing drawings and laser-cutting DXF nesting layouts optimized for precision sheet metal fabrication.",
+  },
+  "2.4-Low-Cost Sheet Metal Roller Bender": {
+    title: "Low-Cost Sheet Metal Roller Bender",
+    description:
+      "Engineered a budget-optimized 3-roll bending mechanism for 0.9 mm–2.0 mm sheet metal. Designed spur-gear drive trains and adjustable lead-screw tensioning to deliver maximum forming capability at minimal manufacturing cost.",
+  },
   "3.1-reverse-engineered-manual-door-lock": {
     title: "Reverse-Engineered Manual Door Lock",
     description:
       "Digitized legacy hardware into a parametric CAD assembly. Mapped hole-pitch coordinates and sliding-throw limits for accurate component replication.",
+  },
+  "4.1-Power pole designing": {
+    title: "Power pole designing",
+    description: "2D technical drawing for the power pole design.",
+  },
+  "4.2-Wall mounted enclosure design": {
+    title: "Wall mounted enclosure design",
+    description: "2D technical drawing for the wall mounted enclosure design.",
+  },
+  "4.3-4x18 light fitting designing": {
+    title: "4x18 light fitting designing",
+    description: "2D technical drawing for the 4x18 light fitting design.",
+  },
+  "4.4-Cover plate designing": {
+    title: "Cover plate designing",
+    description: "2D technical drawing for the cover plate design.",
+  },
+  "4.5-Breaker (compartment) box designing": {
+    title: "Breaker (compartment) box designing",
+    description: "2D technical drawing for the breaker compartment box design.",
   },
 };
 
@@ -59,9 +89,12 @@ function getImagesForProject(categoryFolder, projectFolder) {
   return Object.entries(projectImageModules)
     .filter(([path]) => {
       const pathParts = path.split("/");
+      const imageCategoryFolder = pathParts.at(-3);
+      const imageProjectFolder = pathParts.at(-2);
+
       return (
-        pathParts.at(-3) === categoryFolder &&
-        pathParts.at(-2) === projectFolder
+        imageCategoryFolder?.toLowerCase() === categoryFolder.toLowerCase() &&
+        imageProjectFolder === projectFolder
       );
     })
     .sort(([pathA], [pathB]) =>
@@ -79,7 +112,12 @@ function getProjectsInCategory(categoryFolder) {
   const projectFolders = [
     ...new Set(
       Object.keys(projectImageModules)
-        .filter((path) => path.split("/").at(-3) === categoryFolder)
+        .filter((path) => {
+          const imageCategoryFolder = path.split("/").at(-3);
+          return (
+            imageCategoryFolder?.toLowerCase() === categoryFolder.toLowerCase()
+          );
+        })
         .map((path) => path.split("/").at(-2))
     ),
   ].sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));

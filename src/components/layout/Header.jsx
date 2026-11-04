@@ -23,7 +23,7 @@ export default function Header() {
           <span className="brand-mark">MD</span>
 
           <span className="brand-copy">
-            <span className="brand-title">MECHANICAL DESIGN</span>
+            <span className="brand-title">MECHANICAL DESIGNER</span>
             <small className="brand-subtitle">
               PORTFOLIO <span aria-hidden="true">/</span> 2026
             </small>

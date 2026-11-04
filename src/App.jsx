@@ -46,9 +46,9 @@ function HomePage() {
     <main>
       <Hero />
       <Skills />
+      <Projects />
       <WorkExperience />
       <Education />
-      <Projects />
       <Contact />
     </main>
   );
